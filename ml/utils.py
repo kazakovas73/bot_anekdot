@@ -1,5 +1,22 @@
 import html
 import re
+import datasets
+
+device = 'cpu'
+
+
+def cls_pooling(model_output):
+    return model_output.last_hidden_state[:, 0, :]
+
+
+def get_embeddings(model, tokenizer, text_list):
+    encoded_input = tokenizer(
+        text_list, padding=True, truncation=True, max_length=128, return_tensors="pt"
+    )
+    encoded_input = {k: v.to(device) for k, v in encoded_input.items()}
+    model_output = model(**encoded_input)
+    return cls_pooling(model_output)
+
 
 # define clean function
 # add / remove any line if necessary
@@ -26,3 +43,9 @@ def clean(text):
     text = re.sub(r'\s+', ' ', text)
     
     return text.strip()
+
+
+def load_dataset(datapath: str):
+    embeddings_dataset = datasets.load_from_disk(datapath)
+    embeddings_dataset.add_faiss_index(column="embeddings")
+    return embeddings_dataset
