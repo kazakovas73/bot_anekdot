@@ -1,0 +1,2 @@
+model: ai-forever/sbert_large_nlu_ru
+datapath: data/embeddings_dataset
