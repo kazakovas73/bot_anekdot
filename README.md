@@ -23,16 +23,14 @@ uvicorn app.app:app --host 0.0.0.0 --port 8080
 
 Запуск через контейнер:
 ```console
-docker build -t bot_anekdot_app .
-docker run -p 80:80 bot_anekdot_app
+docker-compose up --build
 ```
 
 Пример работы:
- - 127.0.0.1/docs
-```json
-{
-  "text": "Генерал видит часового на посту с открытым над головой зонтом. — За всю свою долгую службу ни разу не видел солдата, который бы боялся дождя. — А я и не боюсь, у меня зонт.",
-  "anekdot": "Идут по пляжу сержант и рядовой. Рядовой:\n– Товарищ сержант, не правда ли, вон у той девушки очень красивые ноги?\n– Не знаю, я еще не видел, как она марширует.",
-  "score": 151.87033081054688
-}
-```
+- input
+![image](https://github.com/user-attachments/assets/28f790cc-af95-4a6c-874f-892ce718bf5e)
+
+- output
+![image](https://github.com/user-attachments/assets/25196ae3-1796-4137-91f0-cd3efe868081)
+
+
