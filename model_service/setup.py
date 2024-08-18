@@ -13,10 +13,10 @@ def requirements(filepath: str):
 
 
 setup(
-    name="bot_anekdot_app",
+    name="model_app",
     version="0.1.0",
     packages=find_packages(exclude=["tests"]),
     python_requires=">=3.9",
     install_requires=requirements("requirements.txt"),
-    extras_require={"dev": requirements("requirements-dev.txt")},
+    # extras_require={"dev": requirements("requirements-dev.txt")},
 )

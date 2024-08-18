@@ -1,0 +1,6 @@
+datasets
+faiss-cpu
+numpy==1.26.4
+# web framework
+fastapi==0.95.1
+uvicorn==0.21.1
