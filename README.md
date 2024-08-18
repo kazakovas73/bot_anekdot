@@ -13,8 +13,10 @@
 - notebooks: ноутбуки с примерами по работе с данными
 
 Запуск проекта:
-```python -m venv env```
-```env/Scripts/activate```
-```python -m pip install --upgrade pip```
-```pip install -U -e .```
-```uvicorn app.app:app --host 0.0.0.0 --port 8080```
+```console
+python -m venv env
+env/Scripts/activate
+python -m pip install --upgrade pip
+pip install -U -e .
+uvicorn app.app:app --host 0.0.0.0 --port 8080
+```
