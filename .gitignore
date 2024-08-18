@@ -152,3 +152,6 @@ configs/local/default.yaml
 
 # Aim logging
 .aim
+
+# Data
+faiss_service/data/

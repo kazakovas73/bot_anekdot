@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  model_service:
+    build: ./model_service
+    ports:
+      - "8000:8000"
+    depends_on:
+      - faiss_service
+
+  faiss_service:
+    build: ./faiss_service
+    ports:
+      - "8001:8001"

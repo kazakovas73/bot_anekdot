@@ -21,6 +21,12 @@ pip install -U -e .
 uvicorn app.app:app --host 0.0.0.0 --port 8080
 ```
 
+Запуск через контейнер:
+```console
+docker build -t bot_anekdot_app .
+docker run -p 80:80 bot_anekdot_app
+```
+
 Пример работы:
  - 127.0.0.1/docs
 ```json
